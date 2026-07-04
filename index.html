@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maafin Aku Ya... 🥺❤️</title>
+    <style>
+        /* Desain Latar Belakang Hijau Muda Aesthetic & Font */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #d8f3dc; /* Warna hijau sage/mint pastel yang aesthetic */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden; /* Mencegah layar geser kanan-kiri karena stiker */
+        }
+
+        /* Kotak Surat Utama */
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(45, 106, 79, 0.1);
+            max-width: 450px;
+            width: 100%;
+            transition: all 0.3s ease;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Pengaturan GIF Panda Utama */
+        img.main-gif {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #2d6a4f;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #40916c;
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .highlight-text {
+            text-align: center;
+            font-weight: bold;
+            color: #2d6a4f;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        /* Desain Tombol */
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        button {
+            padding: 12px 28px;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-weight: bold;
+        }
+
+        #yesBtn {
+            background-color: #52b788;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            background-color: #74c69d;
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            background-color: #b7e4c7;
+            color: #2d6a4f;
+        }
+
+        /* Menyembunyikan halaman yang belum dipilih */
+        .hidden {
+            display: none;
+        }
+
+        /* FORMAT STIKER PANDA BACKGROUND BERGERAK (LOOPING) */
+        .bg-sticker {
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            opacity: 0.35;
+            z-index: 1;
+            animation: floatAnim 4s ease-in-out infinite alternate;
+        }
+
+        /* Posisi masing-masing stiker panda */
+        .s1 { top: 8%; left: 6%; animation-delay: 0s; }
+        .s2 { top: 12%; right: 6%; animation-delay: 1s; }
+        .s3 { bottom: 12%; left: 6%; animation-delay: 2s; }
+        .s4 { bottom: 8%; right: 6%; animation-delay: 1.5s; }
+
+        /* Animasi bergerak naik turun berulang-ulang */
+        @keyframes floatAnim {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-15px) rotate(8deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STIKER-STIKER PANDA BERGERAK DI BACKGROUND -->
+    <img class="bg-sticker s1" src="https://media.tenor.com/2U9YgT6663UAAAAi/bubu-dudu.gif" alt="Panda">
+    <img class="bg-sticker s2" src="https://media.tenor.com/w166WwWf_vQAAAAi/bubu-dudu-bubu.gif" alt="Panda">
+    <img class="bg-sticker s3" src="https://media.tenor.com/X91eeO7O_mYAAAAi/bubu-dudu-bubu-and-dudu.gif" alt="Panda">
+    <img class="bg-sticker s4" src="https://media.tenor.com/7b7_V89sXpIAAAAi/bubu-dudu-bubu.gif" alt="Panda">
+
+    <!-- HALAMAN 1: Surat Maaf Utama -->
+    <div id="page1" class="container">
+        <img class="main-gif" src="https://media.tenor.com/2U9YgT6663UAAAAi/bubu-dudu.gif" alt="Panda Minta Maaf">
+        <h1>Dear Sayang...</h1>
+        
+        <p>Aku ingin meminta maaf dengan tulus atas kejadian kemarin. Aku sadar kejujuran itu penting dalam hubungan dan kebohongan ku telah membuat kamu kecewa.</p>
+        
+        <p>Aku benar-benar menyesal telah membohongimu. Aku orang nya emang susah jujur tpi kedepan nya dan seterus nya aku akan lebih jujur lagi terhadap mu. Semoga kmu mau memaafkan ku.</p>
+        
+        <p>Apa pun keputusanmu nanti, aku akan tetap menghargainya. percayalah aku mencintai mu melebihi diriku sendiri. terimakasih sudah baca sampai akhir i love you ❤️</p>
+        
+        <div class="highlight-text">Kamu mau kan maafin aku?</div>
+        
+        <div class="buttons">
+            <button id="yesBtn" onclick="nextPage('yes')">Mau 🥰</button>
+            <button id="noBtn" onclick="nextPage('no')">Gak mau 🥺</button>
+        </div>
+    </div>
+
+    <!-- HALAMAN 2: Jika Pacar Menekan MAU (YES) -->
+    <div id="pageYes" class="container hidden">
+        <img class="main-gif" src="https://media.tenor.com/X91eeO7O_mYAAAAi/bubu-dudu-bubu-and-dudu.gif" alt="Panda Happy Hug">
+        <h1>Makasih Banyak Sayang! 😭❤️🎉</h1>
+        <p style="text-align: center; font-size: 16px; font-weight: bold; color: #2d6a4f;">
+            "I love you too!"
+        </p>
+        <p style="text-align: center;">Makasih ya udah kasih aku kesempatan lagi. Aku janji bakal pegang omonganku buat selalu jujur ke kamu mulai sekarang. 💕</p>
+    </div>
+
+    <!-- HALAMAN 3: Jika Pacar Menekan GAK MAU (NO) -->
+    <div id="pageNo" class="container hidden">
+        <img class="main-gif" src="https://media.tenor.com/7b7_V89sXpIAAAAi/bubu-dudu-bubu.gif" alt="Panda Crying">
+        <h1>Aku paham... 🥺💔</h1>
+        <p style="text-align: center; font-size: 15px; font-weight: bold; color: #2d6a4f;">
+            "Aku akan tetap menghargai keputusanmu."
+        </p>
+        <p style="text-align: center;">Aku tau kesalahanku besar banget dan udah bikin kamu kecewa berat. Aku bakal kasih kamu waktu dulu ya... Tapi kalau kamu berubah pikiran, tombol di bawah selalu ada kok. 😭</p>
+        <div class="buttons">
+            <button id="backBtn" onclick="backToMain()" style="background-color: #52b788; color: white;">Kamu ga sayang akuu..🥺</button>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk berpindah halaman
+        function nextPage(choice) {
+            document.getElementById('page1').classList.add('hidden');
+            if(choice === 'yes') {
+                document.getElementById('pageYes').classList.remove('hidden');
+            } else if(choice === 'no') {
+                document.getElementById('pageNo').classList.remove('hidden');
+            }
+        }
+
+        // Fungsi untuk kembali ke halaman utama
+        function backToMain() {
+            document.getElementById('pageYes').classList.add('hidden');
+            document.getElementById('pageNo').classList.add('hidden');
+            document.getElementById('page1').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
