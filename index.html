@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maafin Aku Ya... 🥺❤️</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #d8f3dc; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden; 
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(45, 106, 79, 0.1);
+            max-width: 450px;
+            width: 100%;
+            z-index: 10;
+            position: relative;
+            animation: popIn 0.6s ease-out forwards;
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @keyframes popOut {
+            0% { opacity: 1; transform: scale(1) translateY(0); }
+            100% { opacity: 0; transform: scale(0.8) translateY(-20px); }
+        }
+
+        img.main-gif {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        h1 { color: #2d6a4f; font-size: 22px; margin-bottom: 15px; }
+        p { color: #40916c; font-size: 15px; line-height: 1.6; text-align: justify; margin-bottom: 15px; }
+        .highlight-text { text-align: center; font-weight: bold; color: #2d6a4f; font-size: 16px; margin-top: 20px; }
+        .buttons { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
+        
+        button {
+            padding: 12px 28px;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-weight: bold;
+        }
+
+        #yesBtn { background-color: #52b788; color: white; }
+        #yesBtn:hover { background-color: #74c69d; transform: scale(1.1); }
+        #noBtn { background-color: #b7e4c7; color: #2d6a4f; }
+        .hidden { display: none; }
+
+        /* STIKER BACKGROUND BERGERAK */
+        .bg-sticker {
+            position: fixed;
+            width: 75px;
+            height: 75px;
+            opacity: 0.25;
+            z-index: 1;
+            animation: floatAnim 4s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        .s1 { top: 8%; left: 6%; animation-delay: 0s; }
+        .s2 { top: 12%; right: 6%; animation-delay: 1s; }
+        .s3 { bottom: 12%; left: 6%; animation-delay: 2s; }
+        .s4 { bottom: 8%; right: 6%; animation-delay: 1.5s; }
+
+        @keyframes floatAnim {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-15px) rotate(8deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===================================== -->
+    <!-- TEMPAT STIKER BACKGROUND MELAYANG -->
+    <!-- Ganti teks di dalam kurung dengan nama file gambar bebas untuk hiasan latar -->
+    <!-- ===================================== -->
+    <img class="bg-sticker s1" src="(file.gif)" alt="Panda">
+    <img class="bg-sticker s2" src="(filee.webp)" alt="Panda">
+    <img class="bg-sticker s3" src="(fileee.webp)" alt="Panda">
+    <img class="bg-sticker s4" src="(fileeee.gif)" alt="Panda">
+
+
+    <!-- HALAMAN 1: Tampilan Awal -->
+    <div id="page1" class="container">
+        <!-- ===================================== -->
+        <!-- GANTI DENGAN GIF TAMPILAN UTAMA (TERTAWA) -->
+        <!-- ===================================== -->
+        <img class="main-gif" src="(good-afternoon.gif)" alt="Panda Minta Maaf">
+        
+        <h1>Dear Sayang...</h1>
+        <p>Aku ingin meminta maaf dengan tulus atas kejadian kemarin. Aku sadar kejujuran itu penting dalam hubungan dan kebohongan ku telah membuat kamu kecewa.</p>
+        <p>Aku benar-benar menyesal telah membohongimu. Aku orang nya emang susah jujur tpi kedepan nya dan seterus nya aku akan lebih jujur lagi terhadap mu. Semoga kmu mau memaafkan ku.</p>
+        <p>Apa pun keputusanmu nanti, aku akan tetap menghargainya. percayalah aku mencintai mu melebihi diriku sendiri. terimakasih sudah baca sampai akhir i love you ❤️</p>
+        
+        <div class="highlight-text">Kamu mau kan maafin aku?</div>
+        <div class="buttons">
+            <button id="yesBtn" onclick="nextPage('yes')">Mau 🥰</button>
+            <button id="noBtn" onclick="nextPage('no')">Gak mau 😭</button>
+        </div>
+    </div>
+
+
+    <!-- HALAMAN 2: Jika Pacar Menekan MAU (YES) -->
+    <div id="pageYes" class="container hidden">
+        <!-- ===================================== -->
+        <!-- GANTI DENGAN GIF KACAMATA (MAKASIH SAYANG) -->
+        <!-- ===================================== -->
+        <img class="main-gif" src="(khóc.webp)" alt="Panda Keren">
+        
+        <h1>Makasih Banyak Sayang! 😭❤️</h1>
+        <p style="text-align: center; font-size: 16px; font-weight: bold; color: #2d6a4f;">"I love you too!"</p>
+        <p style="text-align: center;">Makasih ya udah kasih aku kesempatan lagi. Aku janji bakal pegang omonganku buat selalu jujur ke kamu mulai sekarang. 💕</p>
+    </div>
+
+
+    <!-- HALAMAN 3: Jika Pacar Menekan GAK MAU (NO) -->
+    <div id="pageNo" class="container hidden">
+        <!-- ===================================== -->
+        <!-- GANTI DENGAN GIF NANGIS -->
+        <!-- ===================================== -->
+        <img class="main-gif" src="(dudu-dudu-bubu.webp)" alt="Panda Crying">
+        
+        <h1>Aku paham... 🥺💔</h1>
+        <p style="text-align: center; font-size: 15px; font-weight: bold; color: #2d6a4f;">"Aku akan tetap menghargai keputusanmu."</p>
+        <p style="text-align: center;">Aku tau kesalahanku besar banget dan udah bikin kamu kecewa berat. Aku bakal kasih kamu waktu dulu ya... Tapi kalau kamu berubah pikiran, tombol di bawah selalu ada kok. 😭</p>
+        <div class="buttons">
+            <button id="backBtn" onclick="backToMain()" style="background-color: #52b788; color: white;">Pikir-pikir lagi deh 🥺</button>
+        </div>
+    </div>
+
+    <script>
+        function switchPage(hideId, showId) {
+            const hideEl = document.getElementById(hideId);
+            const showEl = document.getElementById(showId);
+            hideEl.style.animation = "popOut 0.4s ease-in forwards";
+            setTimeout(() => {
+                hideEl.classList.add('hidden');
+                hideEl.style.animation = ""; 
+                showEl.classList.remove('hidden');
+                showEl.style.animation = "popIn 0.4s ease-out forwards";
+            }, 400);
+        }
+        function nextPage(choice) {
+            if(choice === 'yes') { switchPage('page1', 'pageYes'); } 
+            else if(choice === 'no') { switchPage('page1', 'pageNo'); }
+        }
+        function backToMain() { switchPage('pageNo', 'page1'); }
+    </script>
+</body>
+</html>
